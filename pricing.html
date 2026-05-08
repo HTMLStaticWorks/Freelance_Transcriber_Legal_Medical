@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Plans | MedLex</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .unique-pricing-section {
+      padding: 6rem 0;
+      overflow: hidden;
+    }
+
+    .image-glow-wrap {
+      position: relative;
+    }
+
+    .image-glow-wrap::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.2) 0%, transparent 70%);
+      z-index: -1;
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+
+    .feature-list-custom {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list-custom li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transform: translateX(-20px);
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+    }
+
+    .reveal.active .feature-list-custom li {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .feature-list-custom li:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    .feature-list-custom li:nth-child(2) {
+      transition-delay: 0.2s;
+    }
+
+    .feature-list-custom li:nth-child(3) {
+      transition-delay: 0.3s;
+    }
+
+    .security-badge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .security-badge-item {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .security-badge-item:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: var(--secondary);
+      transform: translateY(-5px);
+    }
+
+    .anim-float-slow {
+      animation: float-slow 8s ease-in-out infinite;
+    }
+
+    @keyframes float-slow {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    [data-theme="dark"] .bg-light-custom {
+      background-color: #0F172A !important;
+    }
+
+    .bg-light-custom {
+      background-color: #f8fafc;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-headphones text-secondary fs-3"></i>
+        MedLex
+      </a>
+
+      <div class="d-flex align-items-center gap-3 d-lg-none">
+        <button class="theme-toggle rtl-toggle" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon" id="theme-icon-mobile"></i>
+        </button>
+        <button class="navbar-toggler border-0 shadow-none text-white fs-2" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html" title="Dashboard"><i
+                class="bi bi-speedometer2"></i></a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button class="theme-toggle rtl-toggle d-none d-lg-block" aria-label="Toggle RTL">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <button class="theme-toggle d-none d-lg-block" id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="bi bi-moon" id="theme-icon"></i>
+          </button>
+          <a href="login.html" class="nav-link text-white d-none d-lg-block">Login</a>
+          <a href="signup.html" class="nav-link text-white d-none d-lg-block">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Offcanvas Mobile Menu -->
+  <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom border-light border-opacity-10">
+      <h5 class="offcanvas-title text-white" id="mobileMenuLabel">
+        <i class="bi bi-headphones text-secondary"></i> Menu
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html" title="Dashboard"><i
+              class="bi bi-speedometer2"></i></a></li>
+        <li class="nav-item mt-4"><a class="nav-link" href="login.html"><i
+              class="bi bi-box-arrow-in-right me-2"></i>Login</a></li>
+        <li class="nav-item mt-2"><a class="nav-link" href="signup.html"><i class="bi bi-person-plus me-2"></i>Sign
+            Up</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-5 mt-5 pb-5 bg-dark text-white"
+    style="background: linear-gradient(135deg, var(--primary), #1e293b);">
+    <div class="container pt-5 text-center reveal">
+      <h1 class="display-4 fw-bold mb-3 text-white">Transparent Pricing</h1>
+      <p class="lead opacity-75 max-w-700 mx-auto text-white">Pay for exactly what you need. No hidden fees. Exceptional
+        accuracy guaranteed.</p>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-5 my-5">
+    <div class="container">
+      <div class="row g-4 justify-content-center mt-3">
+
+        <!-- Basic Plan -->
+        <div class="col-lg-4 col-md-6 reveal">
+          <div class="glass-card h-100 py-5 d-flex flex-column">
+            <h3 class="mb-2">Basic</h3>
+            <p class="text-muted">For individuals & small tasks</p>
+            <h2 class="display-4 fw-bold text-secondary my-4">$1.50<span class="fs-5 text-muted">/min</span>
+            </h2>
+            <ul class="list-unstyled text-start mb-4">
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> 48-Hour
+                Turnaround</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> 99% Accuracy
+                Guarantee</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Standard
+                Formatting</li>
+              <li class="mb-3 text-muted"><i class="bi bi-x-circle me-2"></i> No Speaker ID</li>
+            </ul>
+            <a href="signup.html" class="btn btn-outline-secondary w-100 mt-auto">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Professional Plan (Most Popular) -->
+        <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.1s">
+          <div class="glass-card h-100 py-5 border border-secondary shadow-lg position-relative d-flex flex-column"
+            style="z-index: 2;">
+            <div
+              class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-secondary px-4 py-2 fs-6">
+              Most Popular
+            </div>
+            <h3 class="mb-2">Professional</h3>
+            <p class="text-muted">For law firms & clinics</p>
+            <h2 class="display-4 fw-bold text-secondary my-4">$2.50<span class="fs-5 text-muted">/min</span>
+            </h2>
+            <ul class="list-unstyled text-start mb-4">
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> 24-Hour
+                Turnaround</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> 99% Accuracy
+                Guarantee</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Legal/Medical
+                Formatting</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Sub-account
+                Support</li>
+            </ul>
+            <a href="signup.html" class="btn btn-secondary-custom w-100 mt-auto">Get Started</a>
+          </div>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s">
+          <div class="glass-card h-100 py-5 d-flex flex-column">
+            <h3 class="mb-2">Enterprise</h3>
+            <p class="text-muted">For hospitals & large agencies</p>
+            <h2 class="display-4 fw-bold text-secondary my-4">Custom</h2>
+            <ul class="list-unstyled text-start mb-4">
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Priority
+                Turnaround</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> API Integration
+              </li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Dedicated
+                Account Manager</li>
+              <li class="mb-3"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Advanced
+                Security Policies</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline-secondary w-100 mt-auto">Contact Sales</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- New Section 1: ROI & Strategic Value -->
+  <section class="unique-pricing-section bg-light-custom">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <div class="image-glow-wrap">
+            <img src="assets/images/roi_analysis_transcription_1778215302426.png" alt="ROI Analysis"
+              class="img-fluid rounded-4 shadow-lg anim-float-slow">
+          </div>
+        </div>
+        <div class="col-lg-6 reveal text-start">
+          <h6 class="text-secondary fw-bold text-uppercase mb-3 text-start">Maximize Your Value</h6>
+          <h2 class="display-5 fw-bold mb-4 text-start">The Strategic ROI of 100% Precision</h2>
+          <p class="lead text-muted mb-4 text-start">In legal and medical fields, "almost accurate" is a liability. Our
+            human-verified process saves organizations thousands by eliminating rework and legal disputes.</p>
+          <ul class="feature-list-custom">
+            <li><i class="bi bi-shield-check text-secondary fs-4"></i> <span>Zero-error tolerance for critical technical
+                terminology.</span></li>
+            <li><i class="bi bi-clock-history text-secondary fs-4"></i> <span>Reduce administrative overhead by up to
+                40%.</span></li>
+            <li><i class="bi bi-graph-up-arrow text-secondary fs-4"></i> <span>Scale your operations without increasing
+                headcount.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Section 2: Enterprise Governance -->
+  <section class="unique-pricing-section">
+    <div class="container reveal">
+      <div class="row align-items-center g-5">
+        <div class="col-md-7 order-lg-1 text-start">
+          <h6 class="text-secondary fw-bold text-uppercase mb-3 text-start">Enterprise Governance</h6>
+          <h2 class="display-5 fw-bold mb-4 text-start">Infrastructure Built for Compliance</h2>
+          <p class="lead text-muted mb-5 text-start">Enterprise plans include advanced oversight tools and priority
+            infrastructure to keep your high-volume data flows secure and efficient.</p>
+
+          <div class="security-badge-grid">
+            <div class="security-badge-item">
+              <i class="bi bi-fingerprint fs-2 text-secondary mb-2 d-block mx-auto"></i>
+              <h6 class="mb-0 fw-bold">Multi-Auth</h6>
+            </div>
+            <div class="security-badge-item">
+              <i class="bi bi-clipboard-data fs-2 text-secondary mb-2 d-block mx-auto"></i>
+              <h6 class="mb-0 fw-bold">Audit Logs</h6>
+            </div>
+            <div class="security-badge-item">
+              <i class="bi bi-hdd-network fs-2 text-secondary mb-2 d-block mx-auto"></i>
+              <h6 class="mb-0 fw-bold">VPN Sync</h6>
+            </div>
+            <div class="security-badge-item">
+              <i class="bi bi-people fs-2 text-secondary mb-2 d-block mx-auto"></i>
+              <h6 class="mb-0 fw-bold">Sub-Accounts</h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 order-lg-2">
+          <div class="p-1 bg-animated-gradient rounded-5">
+            <img src="assets/images/enterprise_security_badge_1778215455650.png" alt="Security Shield"
+              class="img-fluid rounded-4 shadow-lg anim-morph">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Section 3: Global Scale -->
+  <section class="unique-pricing-section bg-dark text-white"
+    style="background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)), url('assets/images/global_transcription_network_1778215479327.png') center/cover fixed;">
+    <div class="container py-5">
+      <div class="row justify-content-center text-center reveal">
+        <div class="col-lg-8">
+          <i class="bi bi-globe-americas display-3 text-secondary mb-4 anim-pulse-glow d-inline-block"></i>
+          <h2 class="display-4 fw-bold text-white mb-4">Global Network, Local Expertise</h2>
+          <p class="lead opacity-75 mb-5 fs-4">Whether you're a clinic in Zurich or a law firm in Tokyo, MedLex provides
+            localized formatting and native-speaker precision across 40+ languages.</p>
+          <div class="row g-4 text-start mt-2">
+            <div class="col-md-4">
+              <div class="p-3 border border-secondary border-opacity-50 rounded-4">
+                <h5 class="text-white"><i class="bi bi-chat-right-text me-2 text-secondary"></i> Multilingual</h5>
+                <p class="mb-0 small text-white opacity-75">Native experts for idiomatic accuracy.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border border-secondary border-opacity-50 rounded-4">
+                <h5 class="text-white"><i class="bi bi-currency-dollar me-2 text-secondary"></i> Unified Rates</h5>
+                <p class="mb-0 small text-white opacity-75">Straightforward pricing globally.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="p-3 border border-secondary border-opacity-50 rounded-4">
+                <h5 class="text-white"><i class="bi bi-patch-check me-2 text-secondary"></i> Certified</h5>
+                <p class="mb-0 small text-white opacity-75">Accepted by international bodies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="py-5 bg-dark text-white border-top border-secondary border-opacity-10">
+    <div class="container">
+      <div class="row g-4 text-start">
+        <div class="col-lg-4">
+          <h5 class="mb-3 d-flex align-items-center gap-2">
+            <i class="bi bi-headphones text-secondary"></i> MedLex
+          </h5>
+          <p class="mb-4 opacity-75">Providing secure, accurate, and rapid transcription services for the
+            legal and medical industries globally.</p>
+          <div class="social-icons d-flex gap-2">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Latest Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-3">Services</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 footer-links">
+            <li><a href="service-details.html">Medical Dictation</a></li>
+            <li><a href="service-details.html">Court Proceedings</a></li>
+            <li><a href="service-details.html">Video to Text</a></li>
+            <li><a href="service-details.html">AI-Assisted Editing</a></li>
+            <li><a href="service-details.html">Multi-language</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-3">Newsletter</h5>
+          <p class="opacity-75">Subscribe for industry insights and updates.</p>
+          <form class="d-flex" onsubmit="event.preventDefault();">
+            <input type="email" class="form-control me-2 bg-dark border-secondary text-white"
+              placeholder="Email address" required>
+            <button type="submit" class="btn btn-secondary-custom px-3"><i class="bi bi-send"></i></button>
+          </form>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center opacity-75 text-sm">
+        <p class="mb-2 mb-md-0">&copy; 2026 MedLex. All rights reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

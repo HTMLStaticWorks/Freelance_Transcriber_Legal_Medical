@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home 2 | MedLex</title>
+    <meta name="description"
+        content="Next-Generation Transcription Services for Legal & Medical Professionals. Discover the future of high-accuracy text conversion.">
+    <!-- Open Graph / SEO -->
+    <meta property="og:title" content="MedLex - Home 2">
+    <meta property="og:description" content="Next-Generation Transcription Services for Professionals.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Unique Animations for Home 2 */
+        @keyframes slideRotate {
+            0% {
+                transform: translateX(0) rotate(0);
+            }
+
+            50% {
+                transform: translateX(10px) rotate(3deg);
+            }
+
+            100% {
+                transform: translateX(0) rotate(0);
+            }
+        }
+
+        .anim-slide-rotate {
+            animation: slideRotate 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(6, 182, 212, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(6, 182, 212, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(6, 182, 212, 0);
+            }
+        }
+
+        .anim-pulse-glow {
+            animation: pulseGlow 3s infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes shakeVert {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateY(-5px);
+            }
+
+            20%,
+            40%,
+            60%,
+            80% {
+                transform: translateY(5px);
+            }
+        }
+
+        .anim-shake-vert:hover {
+            animation: shakeVert 1s;
+        }
+
+        @keyframes panImage {
+            0% {
+                object-position: 0% 50%;
+            }
+
+            50% {
+                object-position: 100% 50%;
+            }
+
+            100% {
+                object-position: 0% 50%;
+            }
+        }
+
+        .anim-pan-image {
+            animation: panImage 20s linear infinite;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .anim-scale-up {
+            animation: scaleUp 5s ease-in-out infinite;
+        }
+
+        @keyframes morphShape {
+            0% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+
+            50% {
+                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            }
+
+            100% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+        }
+
+        .anim-morph {
+            animation: morphShape 8s ease-in-out infinite;
+        }
+
+        .hero-2-bg {
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop') center/cover;
+            background-blend-mode: multiply;
+        }
+
+        .hero-content p.lead {
+            color: #ffffff !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            font-weight: 500;
+            opacity: 1 !important;
+        }
+
+        [data-theme="dark"] .hero-2-bg {
+            background: linear-gradient(to bottom, rgba(11, 17, 32, 0.98), rgba(11, 17, 32, 0.9)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000&auto=format&fit=crop') center/cover !important;
+        }
+
+        .bg-theme-adjust {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] [style*="background:#f8fafc"] {
+            background: var(--card-bg) !important;
+            color: var(--text-main) !important;
+        }
+
+        [data-theme="dark"] .card h4,
+        [data-theme="dark"] .card p {
+            color: var(--text-main) !important;
+        }
+
+        [data-theme="dark"] .bg-light,
+        [data-theme="dark"] .bg-white {
+            background-color: var(--bg-color) !important;
+            color: var(--text-main) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Header Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-glass fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="bi bi-headphones text-secondary fs-3"></i>
+                MedLex
+            </a>
+
+            <div class="d-flex align-items-center gap-3 d-lg-none">
+                <button class="theme-toggle rtl-toggle" aria-label="Toggle RTL">
+                    <i class="bi bi-arrow-left-right"></i>
+                </button>
+                <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle Dark Mode">
+                    <i class="bi bi-moon" id="theme-icon-mobile"></i>
+                </button>
+                <button class="navbar-toggler border-0 shadow-none text-white fs-2" type="button"
+                    data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html" title="Dashboard"><i
+                                class="bi bi-speedometer2"></i></a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle rtl-toggle d-none d-lg-block" aria-label="Toggle RTL">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                    <button class="theme-toggle d-none d-lg-block" id="theme-toggle" aria-label="Toggle Dark Mode">
+                        <i class="bi bi-moon" id="theme-icon"></i>
+                    </button>
+                    <a href="login.html" class="nav-link text-white d-none d-lg-block">Login</a>
+                    <a href="signup.html" class="nav-link text-white d-none d-lg-block">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Offcanvas Mobile Menu -->
+    <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="mobileMenu"
+        aria-labelledby="mobileMenuLabel">
+        <div class="offcanvas-header border-bottom border-light border-opacity-10">
+            <h5 class="offcanvas-title text-white" id="mobileMenuLabel">
+                <i class="bi bi-headphones text-secondary"></i> Menu
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="home2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="dashboard.html" title="Dashboard"><i
+                            class="bi bi-speedometer2"></i></a></li>
+                <li class="nav-item mt-4"><a class="nav-link" href="login.html"><i
+                            class="bi bi-box-arrow-in-right me-2"></i>Login</a></li>
+                <li class="nav-item mt-2"><a class="nav-link" href="signup.html"><i
+                            class="bi bi-person-plus me-2"></i>Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section hero-2-bg">
+        <div class="container hero-content text-center reveal text-lg-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <span class="badge bg-white text-primary mb-3 py-2 px-3 fs-6 rounded-pill anim-scale-up">Next Gen
+                        Accuracy</span>
+                    <h1 class="display-3 fw-bold text-center">Uncompromising Audio to Text Excellence</h1>
+                    <p class="lead mb-5 text-center px-lg-5 text-white">Experience AI-enhanced transcriptions reviewed
+                        by specialized human experts, ensuring perfect fidelity for medical and legal records.</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3">
+                        <a href="signup.html" class="btn btn-secondary-custom btn-lg"><i
+                                class="bi bi-rocket-takeoff me-2"></i>Start Free Trial</a>
+                        <a href="about.html" class="btn btn-primary-custom btn-lg"><i
+                                class="bi bi-info-circle me-2"></i>Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: Dynamic Features -->
+    <section class="py-5 bg-theme-adjust">
+        <div class="container my-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 reveal">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=800&auto=format&fit=crop"
+                        alt="Meeting transcription" class="img-fluid rounded-4 shadow-lg anim-slide-rotate">
+                </div>
+                <div class="col-lg-6 reveal">
+                    <h6 class="text-secondary fw-bold text-uppercase tracking-wide">Core Advantages</h6>
+                    <h2 class="display-5 fw-bold mb-4 text-start">Pioneering Efficiency</h2>
+                    <p class="lead text-muted">We combine human intelligence with state-of-the-art specialized models to
+                        securely turn complex multi-speaker audio into flawless documents in half the usual time.</p>
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="icon-wrapper bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center anim-pulse-glow"
+                            style="width: 60px; height: 60px;">
+                            <i class="bi bi-speedometer2 fs-3"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h4 class="mb-1">Ultra-Fast Turnaround</h4>
+                            <p class="text-muted mb-0">Delivery speeds mapped to your mission-critical needs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: Interactive Grid -->
+    <section class="py-5 bg-theme-adjust">
+        <div class="container my-5">
+            <div class="text-center mb-5 reveal">
+                <h2 class="display-5 fw-bold">Precision at Scale</h2>
+                <p class="lead text-muted">Designed exclusively for heavily regulated environments.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-4 anim-shake-vert text-center"
+                        style="background:#f8fafc; cursor:pointer;">
+                        <i class="bi bi-file-earmark-medical fs-1 text-secondary mb-3"></i>
+                        <h4>EMR Integration</h4>
+                        <p class="text-muted">Direct piping of medical transcripts into your existing Electronic Medical
+                            Records system.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.2s">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-4 anim-shake-vert text-center"
+                        style="background:#f8fafc; cursor:pointer;">
+                        <i class="bi bi-bank2 fs-1 text-secondary mb-3"></i>
+                        <h4>Court Briefs</h4>
+                        <p class="text-muted">Strict adherence to local, state, and federal formatting requirements for
+                            submissions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal" style="transition-delay: 0.4s">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-4 anim-shake-vert text-center"
+                        style="background:#f8fafc; cursor:pointer;">
+                        <i class="bi bi-shield-lock fs-1 text-secondary mb-3"></i>
+                        <h4>Military-Grade Security</h4>
+                        <p class="text-muted">Your sensitive audio and transcript paths are encrypted at rest and in
+                            transit.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: Visual Banner -->
+    <section class="py-5 position-relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=1600&auto=format&fit=crop"
+            class="position-absolute top-0 start-0 w-100 h-100 anim-pan-image" style="object-fit: cover; z-index: -1;"
+            alt="Analysis">
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75" style="z-index:-1;"></div>
+        <div class="container my-5 text-center text-white position-relative reveal" style="z-index: 2;">
+            <i class="bi bi-quote fs-1 text-secondary mb-3 d-block"></i>
+            <h2 class="display-4 fw-bold text-white">"Data clarity translates directly to better patient outcomes and
+                stronger
+                legal defenses."</h2>
+            <p class="lead mt-4 opacity-75">- The MedLex Philosophy</p>
+        </div>
+    </section>
+
+    <!-- SECTION 4: Split Content Feature -->
+    <section class="py-5 bg-theme-adjust">
+        <div class="container my-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-5 reveal">
+                    <h2 class="display-5 fw-bold mb-4 text-start">Global Language Support</h2>
+                    <p class="lead text-muted">Transcribe, translate, and synthesize audio in over 40 languages. Our
+                        certified dual-language experts ensure idioms and sector-specific terminology are translated
+                        vividly.</p>
+                    <ul class="list-unstyled mt-4 fs-5 text-muted">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Spanish &
+                            Portuguese</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-secondary me-2"></i> Mandarin & Japanese
+                        </li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-secondary me-2"></i> German & French
+                        </li>
+                        <li><i class="bi bi-check-circle-fill text-secondary me-2"></i> Arabic & Russian</li>
+                    </ul>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <div class="position-relative">
+                        <div class="position-absolute bg-secondary opacity-25 anim-morph"
+                            style="width: 100%; height: 100%; top: 15px; left: 15px; z-index: 0;"></div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop"
+                            alt="Global team" class="img-fluid rounded-4 shadow-lg position-relative anim-morph"
+                            style="z-index: 1;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: Statistics & Tech Stack -->
+    <section class="py-5 bg-theme-adjust">
+        <div class="container my-5 text-center reveal">
+            <h2 class="display-5 fw-bold mb-5">Driven by State-of-the-Art Tech</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 border bg-light h-100 anim-scale-up" style="animation-delay: 0s;">
+                        <i class="bi bi-robot fs-1 text-primary mb-3"></i>
+                        <h5 class="fw-bold">Neural AI Drafts</h5>
+                        <p class="text-muted small mb-0">Initial pass for structure.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 border bg-light h-100 anim-scale-up" style="animation-delay: 1s;">
+                        <i class="bi bi-person-workspace fs-1 text-primary mb-3"></i>
+                        <h5 class="fw-bold">SME Review</h5>
+                        <p class="text-muted small mb-0">Subject matter expert audits.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 border bg-light h-100 anim-scale-up" style="animation-delay: 2s;">
+                        <i class="bi bi-translate fs-1 text-primary mb-3"></i>
+                        <h5 class="fw-bold">Terminology DB</h5>
+                        <p class="text-muted small mb-0">1M+ specific term library.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 border bg-light h-100 anim-scale-up" style="animation-delay: 3s;">
+                        <i class="bi bi-cloud-check fs-1 text-primary mb-3"></i>
+                        <h5 class="fw-bold">Cloud Delivery</h5>
+                        <p class="text-muted small mb-0">Instant access 24/7 globally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: Call To Action -->
+    <section class="py-5 text-white position-relative overflow-hidden" style="background-color: var(--primary);">
+        <div class="position-absolute top-0 start-0 w-100 h-100 opacity-25 anim-pulse-glow"
+            style="background: radial-gradient(circle, var(--secondary) 0%, transparent 70%);"></div>
+        <div class="container my-5 text-center position-relative z-1 reveal">
+            <h2 class="display-4 fw-bold mb-4 text-white">Ready for Flawless Transcripts?</h2>
+            <p class="lead mb-5 opacity-75 max-w-700 mx-auto">Join thousands of legal professionals and healthcare
+                providers who trust our certified transcriptions every single day.</p>
+            <a href="signup.html"
+                class="btn btn-secondary-custom btn-lg px-5 py-3 rounded-pill shadow-lg anim-scale-up">Create Free
+                Account <i class="bi bi-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-3 d-flex align-items-center gap-2">
+                        <i class="bi bi-headphones text-secondary"></i> MedLex
+                    </h5>
+                    <p class="mb-4 opacity-75">Providing secure, accurate, and rapid transcription services for the
+                        legal and medical industries globally.</p>
+                    <div class="social-icons d-flex gap-2">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Latest Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-3">Services</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="service-details.html">Medical Dictation</a></li>
+                        <li><a href="service-details.html">Court Proceedings</a></li>
+                        <li><a href="service-details.html">Video to Text</a></li>
+                        <li><a href="service-details.html">AI-Assisted Editing</a></li>
+                        <li><a href="service-details.html">Multi-language</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-3">Newsletter</h5>
+                    <p class="opacity-75">Subscribe for industry insights and updates.</p>
+                    <form class="d-flex" onsubmit="event.preventDefault();">
+                        <input type="email" class="form-control me-2 bg-dark border-secondary text-white"
+                            placeholder="Email address" required>
+                        <button type="submit" class="btn btn-secondary-custom px-3"><i class="bi bi-send"></i></button>
+                    </form>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center opacity-75 text-sm">
+                <p class="mb-2 mb-md-0">&copy; 2026 MedLex. All rights reserved.</p>
+                <div class="d-flex gap-3">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

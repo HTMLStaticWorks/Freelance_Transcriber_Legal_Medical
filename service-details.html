@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Details | MedLex</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-glass fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="bi bi-headphones text-secondary fs-3"></i>
+        MedLex
+      </a>
+
+      <div class="d-flex align-items-center gap-3 d-lg-none">
+        <button class="theme-toggle rtl-toggle" aria-label="Toggle RTL">
+          <i class="bi bi-arrow-left-right"></i>
+        </button>
+        <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle Dark Mode">
+          <i class="bi bi-moon" id="theme-icon-mobile"></i>
+        </button>
+        <button class="navbar-toggler border-0 shadow-none text-white fs-2" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html" title="Dashboard"><i
+                class="bi bi-speedometer2"></i></a></li>
+        </ul>
+        <div class="d-flex align-items-center gap-3">
+          <button class="theme-toggle rtl-toggle d-none d-lg-block" aria-label="Toggle RTL">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <button class="theme-toggle d-none d-lg-block" id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="bi bi-moon" id="theme-icon"></i>
+          </button>
+          <a href="login.html" class="nav-link text-white d-none d-lg-block">Login</a>
+          <a href="signup.html" class="nav-link text-white d-none d-lg-block">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Offcanvas Mobile Menu -->
+  <div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header border-bottom border-light border-opacity-10">
+      <h5 class="offcanvas-title text-white" id="mobileMenuLabel">
+        <i class="bi bi-headphones text-secondary"></i> Menu
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html" title="Dashboard"><i
+              class="bi bi-speedometer2"></i></a></li>
+        <li class="nav-item mt-4"><a class="nav-link" href="login.html"><i
+              class="bi bi-box-arrow-in-right me-2"></i>Login</a></li>
+        <li class="nav-item mt-2"><a class="nav-link" href="signup.html"><i class="bi bi-person-plus me-2"></i>Sign
+            Up</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-5 mt-5 pb-5 bg-dark text-white"
+    style="background: linear-gradient(135deg, var(--primary), #1e293b);">
+    <div class="container pt-5 text-center reveal">
+      <span class="badge bg-secondary mb-3 py-2 px-3 fs-6 rounded-pill"><i class="bi bi-bank me-2"></i>Legal
+        Service</span>
+      <h1 class="display-4 fw-bold mb-3 text-white">Legal Transcription</h1>
+      <p class="lead opacity-75 max-w-700 mx-auto">Verbatim, highly secure transcription for courts, and corporate
+        law firms.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-5 my-4">
+    <div class="container">
+      <div class="row g-5">
+        <!-- Main Content -->
+        <div class="col-lg-8 reveal">
+          <div class="glass-card text-start">
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?w=800&auto=format&fit=crop"
+              class="img-fluid rounded-4 mb-4 w-100" style="object-fit: cover; height: 350px;" alt="Legal gavel">
+            <h3 class="text-start">Service Overview</h3>
+            <p class="text-muted">Legal proceedings demand perfect accuracy. A single mistranscribed word
+              can alter the outcome of a case. We provide certified legal transcription services for law
+              firms, legal departments, and court reporting agencies.</p>
+
+            <h4 class="text-start mt-5 mb-3">Supported Formats</h4>
+            <ul class="list-unstyled text-muted border-start border-secondary border-3 ps-3">
+              <li class="mb-2">Depositions and witness testimonies</li>
+              <li class="mb-2">Court hearings and arbitrations</li>
+              <li class="mb-2">Interrogations and police reports</li>
+              <li class="mb-2">Client correspondence and legal briefs</li>
+            </ul>
+
+            <h4 class="text-start mt-5 mb-3">Security Measures</h4>
+            <p class="text-muted">All documents are processed strictly within a closed, SOC 2 compliant
+              environment. Files are deleted from our servers voluntarily after 30 days of completion
+              unless archived by request.</p>
+          </div>
+
+          <!-- FAQ Accordion inside Details -->
+          <div class="mt-5">
+            <h4 class="text-start mb-4">Frequently Asked Questions</h4>
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item bg-transparent glass-card mb-2 text-start p-0">
+                <h2 class="accordion-header text-start">
+                  <button class="accordion-button bg-transparent text-white shadow-none collapsed" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                    Do you provide certificates of accuracy?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted border-top border-secondary border-opacity-25">
+                    Yes, upon request, we issue a signed and dated certificate verifying the
+                    verbatim accuracy of the transcript according to audio clarity.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Sidebar -->
+        <div class="col-lg-4 reveal" style="transition-delay: 0.1s">
+          <div class="position-sticky text-start" style="top: 100px;">
+            <div class="glass-card mb-4 border-top border-accent border-4">
+              <h4 class="text-start">Quick Details</h4>
+              <hr class="border-secondary opacity-25">
+              <div class="d-flex justify-content-between mb-3 text-muted">
+                <span>Turnaround:</span> <span class="fw-bold text-white">12h - 48h</span>
+              </div>
+              <div class="d-flex justify-content-between mb-3 text-muted">
+                <span>Accuracy:</span> <span class="fw-bold text-white">99%+</span>
+              </div>
+              <div class="d-flex justify-content-between mb-3 text-muted">
+                <span>Pricing from:</span> <span class="fw-bold text-secondary">$2.00/min</span>
+              </div>
+              <a href="signup.html" class="btn btn-secondary-custom w-100 mt-2">Start Project</a>
+            </div>
+
+            <div class="glass-card text-center bg-secondary text-white border-0 mt-4 shadow-lg p-5">
+              <i class="bi bi-telephone display-3 mb-3 d-block"></i>
+              <h4>Need Custom Solutions?</h4>
+              <p class="small opacity-75">Contact our legal sales team directly.</p>
+              <a href="contact.html" class="btn btn-light w-100 text-secondary fw-bold rounded-pill">Contact Sales</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="py-5 mt-5 bg-dark text-white">
+    <div class="container">
+      <div class="row g-4 text-start">
+        <div class="col-lg-4">
+          <h5 class="mb-3 d-flex align-items-center gap-2">
+            <i class="bi bi-headphones text-secondary"></i> MedLex
+          </h5>
+          <p class="mb-4 opacity-75">Providing secure, accurate, and rapid transcription services for the
+            legal and medical industries globally.</p>
+          <div class="social-icons d-flex gap-2">
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h5 class="mb-3">Quick Links</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Latest Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-3">Services</h5>
+          <ul class="list-unstyled d-flex flex-column gap-2 footer-links">
+            <li><a href="service-details.html">Medical Dictation</a></li>
+            <li><a href="service-details.html">Court Proceedings</a></li>
+            <li><a href="service-details.html">Video to Text</a></li>
+            <li><a href="service-details.html">AI-Assisted Editing</a></li>
+            <li><a href="service-details.html">Multi-language</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <h5 class="mb-3">Newsletter</h5>
+          <p class="opacity-75">Subscribe for industry insights and updates.</p>
+          <form class="d-flex" onsubmit="event.preventDefault();">
+            <input type="email" class="form-control me-2 bg-dark border-secondary text-white"
+              placeholder="Email address" required>
+            <button type="submit" class="btn btn-secondary-custom px-3"><i class="bi bi-send"></i></button>
+          </form>
+        </div>
+      </div>
+      <hr class="footer-divider">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center opacity-75 text-sm">
+        <p class="mb-2 mb-md-0">&copy; 2026 MedLex. All rights reserved.</p>
+        <div class="d-flex gap-3">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
