@@ -82,12 +82,14 @@
     }
 
     .security-badge-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 1.5rem;
+      justify-content: center;
     }
 
     .security-badge-item {
+      min-width: 160px;
       background: var(--card-bg);
       border: 1px solid var(--glass-border);
       border-radius: 12px;
@@ -124,6 +126,11 @@
 
     .bg-light-custom {
       background-color: #f8fafc;
+    }
+
+    .glass-card h4,
+    .glass-card p {
+      color: var(--text-main) !important;
     }
   </style>
 </head>
@@ -223,7 +230,7 @@
         <!-- Basic Plan -->
         <div class="col-lg-4 col-md-6 reveal">
           <div class="glass-card h-100 py-5 d-flex flex-column">
-            <h3 class="mb-2">Basic</h3>
+            <h2 class="h3 fw-bold mb-2">Basic</h2>
             <p class="text-muted">For individuals & small tasks</p>
             <h2 class="display-4 fw-bold text-secondary my-4">$1.50<span class="fs-5 text-muted">/min</span>
             </h2>
@@ -248,7 +255,7 @@
               class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-secondary px-4 py-2 fs-6">
               Most Popular
             </div>
-            <h3 class="mb-2">Professional</h3>
+            <h2 class="h3 fw-bold mb-2">Professional</h2>
             <p class="text-muted">For law firms & clinics</p>
             <h2 class="display-4 fw-bold text-secondary my-4">$2.50<span class="fs-5 text-muted">/min</span>
             </h2>
@@ -269,7 +276,7 @@
         <!-- Enterprise Plan -->
         <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 0.2s">
           <div class="glass-card h-100 py-5 d-flex flex-column">
-            <h3 class="mb-2">Enterprise</h3>
+            <h2 class="h3 fw-bold mb-2">Enterprise</h2>
             <p class="text-muted">For hospitals & large agencies</p>
             <h2 class="display-4 fw-bold text-secondary my-4">Custom</h2>
             <ul class="list-unstyled text-start mb-4">
@@ -302,7 +309,7 @@
         </div>
         <div class="col-lg-6 reveal text-start">
           <h6 class="text-secondary fw-bold text-uppercase mb-3 text-start">Maximize Your Value</h6>
-          <h2 class="display-5 fw-bold mb-4 text-start">The Strategic ROI of 100% Precision</h2>
+          <h2 class="display-4 fw-bold mb-4 text-start">The Strategic ROI of 100% Precision</h2>
           <p class="lead text-muted mb-4 text-start">In legal and medical fields, "almost accurate" is a liability. Our
             human-verified process saves organizations thousands by eliminating rework and legal disputes.</p>
           <ul class="feature-list-custom">
@@ -324,26 +331,26 @@
       <div class="row align-items-center g-5">
         <div class="col-md-7 order-lg-1 text-start">
           <h6 class="text-secondary fw-bold text-uppercase mb-3 text-start">Enterprise Governance</h6>
-          <h2 class="display-5 fw-bold mb-4 text-start">Infrastructure Built for Compliance</h2>
+          <h2 class="display-4 fw-bold mb-4 text-start">Infrastructure Built for Compliance</h2>
           <p class="lead text-muted mb-5 text-start">Enterprise plans include advanced oversight tools and priority
             infrastructure to keep your high-volume data flows secure and efficient.</p>
 
           <div class="security-badge-grid">
             <div class="security-badge-item">
               <i class="bi bi-fingerprint fs-2 text-secondary mb-2 d-block mx-auto"></i>
-              <h6 class="mb-0 fw-bold">Multi-Auth</h6>
+              <h5 class="mb-0 fw-bold">Multi-Auth</h5>
             </div>
             <div class="security-badge-item">
               <i class="bi bi-clipboard-data fs-2 text-secondary mb-2 d-block mx-auto"></i>
-              <h6 class="mb-0 fw-bold">Audit Logs</h6>
+              <h5 class="mb-0 fw-bold">Audit Logs</h5>
             </div>
             <div class="security-badge-item">
               <i class="bi bi-hdd-network fs-2 text-secondary mb-2 d-block mx-auto"></i>
-              <h6 class="mb-0 fw-bold">VPN Sync</h6>
+              <h5 class="mb-0 fw-bold">VPN Sync</h5>
             </div>
             <div class="security-badge-item">
               <i class="bi bi-people fs-2 text-secondary mb-2 d-block mx-auto"></i>
-              <h6 class="mb-0 fw-bold">Sub-Accounts</h6>
+              <h5 class="mb-0 fw-bold">Sub-Accounts</h5>
             </div>
           </div>
         </div>
@@ -364,26 +371,30 @@
       <div class="row justify-content-center text-center reveal">
         <div class="col-lg-8">
           <i class="bi bi-globe-americas display-3 text-secondary mb-4 anim-pulse-glow d-inline-block"></i>
-          <h2 class="display-4 fw-bold text-white mb-4">Global Network, Local Expertise</h2>
+          <h2 class="display-3 fw-bold text-white mb-4">Global Network, Local Expertise</h2>
           <p class="lead opacity-75 mb-5 fs-4">Whether you're a clinic in Zurich or a law firm in Tokyo, MedLex provides
             localized formatting and native-speaker precision across 40+ languages.</p>
-          <div class="row g-4 text-start mt-2">
+          <div class="row g-4 text-start mt-2 d-flex align-items-stretch">
             <div class="col-md-4">
-              <div class="p-3 border border-secondary border-opacity-50 rounded-4">
-                <h5 class="text-white"><i class="bi bi-chat-right-text me-2 text-secondary"></i> Multilingual</h5>
-                <p class="mb-0 small text-white opacity-75">Native experts for idiomatic accuracy.</p>
+              <div class="p-4 border border-secondary border-opacity-50 rounded-4 h-100 d-flex flex-column glass-card">
+                <h4 class="fw-bold mb-3"><i class="bi bi-chat-right-text me-2 text-secondary"></i>
+                  Multilingual
+                </h4>
+                <p class="mb-0 small opacity-75 mt-auto">Native experts for idiomatic accuracy.</p>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="p-3 border border-secondary border-opacity-50 rounded-4">
-                <h5 class="text-white"><i class="bi bi-currency-dollar me-2 text-secondary"></i> Unified Rates</h5>
-                <p class="mb-0 small text-white opacity-75">Straightforward pricing globally.</p>
+              <div class="p-4 border border-secondary border-opacity-50 rounded-4 h-100 d-flex flex-column glass-card">
+                <h4 class="fw-bold mb-3"><i class="bi bi-currency-dollar me-2 text-secondary"></i> Unified
+                  Rates
+                </h4>
+                <p class="mb-0 small opacity-75 mt-auto">Straightforward pricing globally.</p>
               </div>
             </div>
             <div class="col-md-4">
-              <div class="p-3 border border-secondary border-opacity-50 rounded-4">
-                <h5 class="text-white"><i class="bi bi-patch-check me-2 text-secondary"></i> Certified</h5>
-                <p class="mb-0 small text-white opacity-75">Accepted by international bodies.</p>
+              <div class="p-4 border border-secondary border-opacity-50 rounded-4 h-100 d-flex flex-column glass-card">
+                <h4 class="fw-bold mb-3"><i class="bi bi-patch-check me-2 text-secondary"></i> Certified</h4>
+                <p class="mb-0 small opacity-75 mt-auto">Accepted by international bodies.</p>
               </div>
             </div>
           </div>
@@ -397,8 +408,8 @@
     <div class="container">
       <div class="row g-4 text-start">
         <div class="col-lg-4">
-          <h5 class="mb-3 d-flex align-items-center gap-2">
-            <i class="bi bi-headphones text-secondary"></i> MedLex
+          <h5 class="mb-3 d-flex align-items-center gap-2 footer-brand">
+            <i class="bi bi-headphones text-secondary fs-3"></i> MedLex
           </h5>
           <p class="mb-4 opacity-75">Providing secure, accurate, and rapid transcription services for the
             legal and medical industries globally.</p>

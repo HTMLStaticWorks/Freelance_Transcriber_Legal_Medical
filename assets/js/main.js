@@ -139,20 +139,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Password Visibility Toggle
-  document.addEventListener('click', (e) => {
-    if (e.target.closest('.password-toggle')) {
-      const btn = e.target.closest('.password-toggle');
-      const input = btn.parentElement.querySelector('input');
-      const icon = btn.querySelector('i');
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.replace('bi-eye', 'bi-eye-slash');
-      } else {
-        input.type = 'password';
-        icon.classList.replace('bi-eye-slash', 'bi-eye');
-      }
-    }
-  });
+    // Password Visibility Toggle
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.password-toggle')) {
+            const btn = e.target.closest('.password-toggle');
+            const input = btn.parentElement.querySelector('input');
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('bi-eye', 'bi-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('bi-eye-slash', 'bi-eye');
+            }
+        }
+    });
+
+    // Back to Top Logic
+    const backToTopBtn = document.createElement('div');
+    backToTopBtn.className = 'back-to-top';
+    backToTopBtn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+    document.body.appendChild(backToTopBtn);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
 });
+

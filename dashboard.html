@@ -63,10 +63,23 @@
       text-decoration: none;
     }
 
+    .sidebar-brand:hover {
+      color: white;
+    }
+
     .sidebar-nav {
       padding: 0 1rem;
       flex-grow: 1;
       overflow-y: auto;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .sidebar-nav::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari and Opera */
     }
 
     .sidebar-footer {
@@ -134,7 +147,6 @@
         padding-top: 6rem;
         width: 100%;
         max-width: 100vw;
-        overflow-x: hidden;
       }
 
       .dashboard-header {
@@ -195,10 +207,6 @@
       color: #0f172a !important;
     }
 
-    [data-theme="light"] .nav-link-custom {
-      color: rgba(255, 255, 255, 0.8);
-    }
-
     .dashboard-module input.form-control {
       color: var(--text-main) !important;
     }
@@ -206,6 +214,22 @@
     [data-theme="light"] .dashboard-module input.form-control {
       color: #0f172a !important;
       border-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .btn-outline-secondary {
+      color: rgba(255, 255, 255, 0.6);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] .btn-outline-secondary {
+      color: #475569 !important;
+      border-color: rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: var(--secondary);
+      border-color: var(--secondary);
+      color: white !important;
     }
   </style>
 </head>
@@ -311,7 +335,7 @@
           <div
             class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4 text-center text-md-start">
             <div>
-              <h2 class="fw-bold mb-1">Dashboard Overview</h2>
+              <h2 class="display-4 fw-bold mb-1">Dashboard Overview</h2>
               <p class="text-muted mb-0">Monitor your transcription health and active projects.</p>
             </div>
             <button class="btn btn-secondary-custom shadow-lg">
@@ -322,51 +346,65 @@
           <!-- Quick Stats -->
           <div class="row g-4 mb-4">
             <div class="col-sm-6 col-xl-3">
-              <div class="glass-card text-center text-sm-start p-4">
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-between mb-2">
-                  <h6 class="text-muted mb-0">Total Uploads</h6>
-                  <div class="bg-secondary bg-opacity-10 p-2 rounded-3">
-                    <i class="bi bi-file-earmark-music text-secondary"></i>
+              <div class="glass-card text-start p-4 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h6 class="text-muted mb-0 fw-bold">Total Uploads</h6>
+                  <div class="bg-secondary bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center"
+                    style="width: 42px; height: 42px;">
+                    <i class="bi bi-file-earmark-music text-secondary fs-5"></i>
                   </div>
                 </div>
-                <h3 class="fw-bold mb-0">128</h3>
-                <small class="text-success"><i class="bi bi-arrow-up me-1"></i>12% increase</small>
+                <div>
+                  <h3 class="display-5 fw-bold mb-1">128</h3>
+                  <small class="text-success d-flex align-items-center gap-1">
+                    <i class="bi bi-arrow-up"></i> 12% increase
+                  </small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6 col-xl-3">
-              <div class="glass-card text-center text-sm-start p-4">
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-between mb-2">
-                  <h6 class="text-muted mb-0">In Progress</h6>
-                  <div class="bg-primary bg-opacity-10 p-2 rounded-3">
-                    <i class="bi bi-arrow-repeat text-primary anim-spin"></i>
+              <div class="glass-card text-start p-4 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h6 class="text-muted mb-0 fw-bold">In Progress</h6>
+                  <div class="bg-primary bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center"
+                    style="width: 42px; height: 42px;">
+                    <i class="bi bi-arrow-repeat text-primary anim-spin fs-5"></i>
                   </div>
                 </div>
-                <h3 class="fw-bold mb-0">3</h3>
-                <small class="text-muted">Est. delivery: 4h</small>
+                <div>
+                  <h3 class="display-5 fw-bold mb-1">3</h3>
+                  <small class="text-muted">Est. delivery: 4h</small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6 col-xl-3">
-              <div class="glass-card text-center text-sm-start p-4">
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-between mb-2">
-                  <h6 class="text-muted mb-0">Completed</h6>
-                  <div class="bg-success bg-opacity-10 p-2 rounded-3">
-                    <i class="bi bi-check2-circle text-success"></i>
+              <div class="glass-card text-start p-4 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h6 class="text-muted mb-0 fw-bold">Completed</h6>
+                  <div class="bg-success bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center"
+                    style="width: 42px; height: 42px;">
+                    <i class="bi bi-check2-circle text-success fs-5"></i>
                   </div>
                 </div>
-                <h3 class="fw-bold mb-0">125</h3>
-                <small class="text-muted">Total processed</small>
+                <div>
+                  <h3 class="display-5 fw-bold mb-1">125</h3>
+                  <small class="text-muted">Total processed</small>
+                </div>
               </div>
             </div>
             <div class="col-sm-6 col-xl-3">
-              <div class="glass-card text-center text-sm-start p-4">
-                <div class="d-flex align-items-center justify-content-center justify-content-sm-between mb-2">
-                  <h6 class="text-muted mb-0">Data Cleared</h6>
-                  <div class="bg-info bg-opacity-10 p-2 rounded-3">
-                    <i class="bi bi-shield-check text-info"></i>
+              <div class="glass-card text-start p-4 h-100 d-flex flex-column justify-content-between">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h6 class="text-muted mb-0 fw-bold">Data Cleared</h6>
+                  <div class="bg-info bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center"
+                    style="width: 42px; height: 42px;">
+                    <i class="bi bi-shield-check text-info fs-5"></i>
                   </div>
                 </div>
-                <h3 class="fw-bold mb-0">45GB</h3>
-                <small class="text-muted">Zero-leak history</small>
+                <div>
+                  <h3 class="display-5 fw-bold mb-1">45GB</h3>
+                  <small class="text-muted">Zero-leak history</small>
+                </div>
               </div>
             </div>
           </div>
@@ -374,14 +412,14 @@
           <!-- Recent Activity Table -->
           <div class="glass-card p-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
-              <h4 class="mb-0 fw-bold">Recent Activity</h4>
+              <h3 class="h4 mb-0 fw-bold">Recent Activity</h3>
               <div class="d-flex gap-2">
                 <input type="text" class="form-control form-control-sm border-secondary bg-transparent bg-theme-adjust"
                   placeholder="Filter transcripts...">
               </div>
             </div>
             <div class="table-responsive">
-              <table class="table table-hover align-middle mb-0">
+              <table class="table table-hover align-middle mb-0 text-nowrap">
                 <thead>
                   <tr class="text-muted small">
                     <th>FILE NAME</th>
@@ -420,7 +458,7 @@
         <!-- Module: Transcripts -->
         <div id="transcripts-module" class="dashboard-module d-none">
           <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2 class="fw-bold mb-0">My Transcripts</h2>
+            <h2 class="display-4 fw-bold mb-0">My Transcripts</h2>
             <div class="d-flex gap-2">
               <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-filter me-1"></i>Filter</button>
               <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-download me-1"></i>Export CSV</button>
@@ -473,13 +511,13 @@
 
         <!-- Module: Upload -->
         <div id="upload-module" class="dashboard-module d-none">
-          <h2 class="fw-bold mb-4">Upload Hub</h2>
+          <h2 class="display-4 fw-bold mb-4">Upload Hub</h2>
           <div class="row g-4">
             <div class="col-lg-8">
-              <div class="glass-card p-5 text-center border-dashed border-2 mb-4"
+              <div class="glass-card p-5 text-center border-dashed border-2 h-100"
                 style="border-color: rgba(255,255,255,0.1) !important;">
                 <i class="bi bi-cloud-arrow-up display-1 text-secondary mb-3"></i>
-                <h3>Drag & Drop Files</h3>
+                <h3 class="h2 fw-bold">Drag & Drop Files</h3>
                 <p class="text-muted">Supports MP3, WAV, MP4 & MOV up to 2GB.</p>
                 <div class="mt-4">
                   <button class="btn btn-secondary-custom px-5">Browse Files</button>
@@ -489,7 +527,7 @@
             </div>
             <div class="col-lg-4">
               <div class="glass-card p-4 text-start h-100">
-                <h5 class="fw-bold mb-4 border-bottom border-secondary border-opacity-25 pb-2">Upload Guidelines</h5>
+                <h4 class="fw-bold mb-4 border-bottom border-secondary border-opacity-25 pb-2">Upload Guidelines</h4>
                 <ul class="list-unstyled small mb-0">
                   <li class="mb-3 d-flex align-items-start gap-3">
                     <i class="bi bi-check2-circle text-secondary fs-5"></i>
@@ -511,12 +549,12 @@
 
         <!-- Module: Billing -->
         <div id="billing-module" class="dashboard-module d-none">
-          <h2 class="fw-bold mb-4">Billing & Plans</h2>
+          <h2 class="display-4 fw-bold mb-4">Billing & Plans</h2>
           <div class="row g-4">
             <div class="col-lg-4">
               <div class="glass-card p-4 h-100 bg-theme-adjust">
                 <span class="badge bg-secondary mb-2">Current Plan</span>
-                <h3 class="fw-bold">Enterprise Pro</h3>
+                <h3 class="h2 fw-bold">Enterprise Pro</h3>
                 <p class="text-muted small">500 Transcription mins / month</p>
                 <div class="progress mb-3" style="height: 10px;">
                   <div class="progress-bar bg-secondary" role="progressbar" style="width: 65%;"></div>
@@ -527,9 +565,9 @@
             </div>
             <div class="col-lg-8">
               <div class="glass-card p-4">
-                <h5 class="fw-bold mb-4">Billing History</h5>
+                <h4 class="fw-bold mb-4">Billing History</h4>
                 <div class="table-responsive">
-                  <table class="table table-sm align-middle text-white-50">
+                  <table class="table table-sm align-middle text-white-50 text-nowrap">
                     <thead>
                       <tr>
                         <th>INVOICE</th>
@@ -555,11 +593,11 @@
 
         <!-- Module: Settings -->
         <div id="settings-module" class="dashboard-module d-none">
-          <h2 class="fw-bold mb-4">Account Settings</h2>
+          <h2 class="display-4 fw-bold mb-4">Account Settings</h2>
           <div class="row g-4">
             <div class="col-lg-8">
               <div class="glass-card p-4">
-                <h5 class="fw-bold mb-4">Profile Information</h5>
+                <h4 class="fw-bold mb-4">Profile Information</h4>
                 <form class="row g-3">
                   <div class="col-md-6">
                     <label class="form-label text-muted small fw-bold">Full Name</label>
@@ -578,7 +616,7 @@
             </div>
             <div class="col-lg-4">
               <div class="glass-card p-4">
-                <h5 class="fw-bold mb-3">Login Security</h5>
+                <h4 class="fw-bold mb-3">Login Security</h4>
                 <p class="text-muted small">Update your password or enable 2FA for extra vault protection.</p>
                 <button class="btn btn-outline-secondary btn-sm w-100 mb-2">Change Password</button>
                 <button class="btn btn-outline-info btn-sm w-100">Setup 2FA</button>
@@ -588,34 +626,34 @@
         </div>
 
         <!-- Module: Security -->
-        <div id="security-module" class="dashboard-module d-none">
-          <h2 class="fw-bold mb-4">Security Vault</h2>
-          <div class="row g-4">
-            <div class="col-md-3">
+        <div id="security-module" class="dashboard-module d-none text-center">
+          <h2 class="display-4 fw-bold mb-5">Security Vault</h2>
+          <div class="row g-4 justify-content-center">
+            <div class="col-sm-6 col-xl-3">
               <div class="glass-card h-100 p-4 text-center">
                 <i class="bi bi-shield-lock display-4 text-secondary mb-3"></i>
-                <h5 class="fw-bold">Encryption</h5>
+                <h4 class="fw-bold">Encryption</h4>
                 <p class="text-muted small mb-0">AES-256 bit end-to-end active.</p>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-6 col-xl-3">
               <div class="glass-card h-100 p-4 text-center">
                 <i class="bi bi-file-earmark-medical display-4 text-secondary mb-3"></i>
-                <h5 class="fw-bold">HIPAA Ready</h5>
+                <h4 class="fw-bold">HIPAA Ready</h4>
                 <p class="text-muted small mb-0">Strict PHI data handling enabled.</p>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-6 col-xl-3">
               <div class="glass-card h-100 p-4 text-center">
                 <i class="bi bi-person-check display-4 text-secondary mb-3"></i>
-                <h5 class="fw-bold">MFA Status</h5>
+                <h4 class="fw-bold">MFA Status</h4>
                 <p class="text-muted small mb-0">Multi-Factor Authentication active.</p>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-sm-6 col-xl-3">
               <div class="glass-card h-100 p-4 text-center">
                 <i class="bi bi-geo-alt display-4 text-secondary mb-3"></i>
-                <h5 class="fw-bold">Sovereignty</h5>
+                <h4 class="fw-bold">Sovereignty</h4>
                 <p class="text-muted small mb-0">Local regional data storage only.</p>
               </div>
             </div>
@@ -624,10 +662,10 @@
 
         <!-- Module: Audit -->
         <div id="audit-module" class="dashboard-module d-none">
-          <h2 class="fw-bold mb-4">Audit Logs</h2>
+          <h2 class="display-4 fw-bold mb-4">Audit Logs</h2>
           <div class="glass-card p-4">
             <div class="table-responsive">
-              <table class="table table-sm align-middle text-white-50">
+              <table class="table table-sm align-middle text-white-50 text-nowrap">
                 <thead>
                   <tr>
                     <th>EVENT</th>
@@ -680,9 +718,9 @@
               navLinks.forEach(l => l.classList.remove('active'));
               this.classList.add('active');
 
-              // On mobile, close sidebar after choice
+              // On mobile/tablet, close sidebar after choice
               const sidebar = document.getElementById('dashboardSidebar');
-              if (window.innerWidth < 992) {
+              if (window.innerWidth <= 1024) {
                 sidebar.classList.remove('show');
               }
             }

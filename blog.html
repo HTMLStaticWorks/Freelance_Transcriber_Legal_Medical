@@ -164,38 +164,40 @@
   <!-- SECTION 2: Article Knowledge Hub (Filterable) -->
   <section class="py-5 bg-light bg-theme-adjust">
     <div class="container reveal">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5">
+      <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-4 mb-5">
         <div>
-          <h2 class="fw-bold mb-0">Knowledge Hub</h2>
-          <p class="text-muted mb-0">Filter insights by your industry or specific needs.</p>
+          <h2 class="display-4 fw-bold mb-0">Knowledge Hub</h2>
+          <p class="fs-5 text-muted mb-0">Filter insights by your industry or specific needs.</p>
         </div>
-        <div class="d-flex gap-2 flex-wrap">
-          <button class="btn btn-outline-secondary blog-filter-btn active">All</button>
-          <button class="btn btn-outline-secondary blog-filter-btn">Legal</button>
-          <button class="btn btn-outline-secondary blog-filter-btn">Medical</button>
-          <button class="btn btn-outline-secondary blog-filter-btn">Security</button>
-          <div class="input-group ms-md-3" style="max-width: 250px;">
+        <div class="d-flex gap-2 flex-wrap flex-sm-nowrap align-items-center">
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary blog-filter-btn active">All</button>
+            <button class="btn btn-outline-secondary blog-filter-btn">Legal</button>
+            <button class="btn btn-outline-secondary blog-filter-btn">Medical</button>
+            <button class="btn btn-outline-secondary blog-filter-btn">Security</button>
+          </div>
+          <div class="input-group ms-sm-3" style="min-width: 200px; max-width: 250px;">
             <span class="input-group-text bg-white border-end-0 bg-theme-adjust"><i class="bi bi-search"></i></span>
             <input type="text" class="form-control border-start-0 bg-theme-adjust" placeholder="Search articles...">
           </div>
         </div>
       </div>
 
-      <div class="row g-4">
+      <div class="row g-4 d-flex align-items-stretch">
         <!-- Blog Item 1 -->
         <div class="col-lg-4 col-md-6 mb-4">
           <div class="card h-100 border-0 shadow-sm glass-card overflow-hidden">
             <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&auto=format&fit=crop"
               class="card-img-top" alt="Verbatim Transcription">
-            <div class="card-body p-4">
+            <div class="card-body p-4 d-flex flex-column h-100">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <span class="badge bg-secondary">Legal</span>
                 <small class="text-muted">May 12, 2026</small>
               </div>
-              <h5 class="card-title fw-bold">Effective Verbatim Transcription in Courtrooms</h5>
+              <h4 class="card-title fw-bold">Effective Verbatim Transcription in Courtrooms</h4>
               <p class="card-text text-muted small">Understanding the difference between full verbatim and intelligent
                 verbatim for legal proceedings.</p>
-              <a href="#" class="btn btn-link text-secondary p-0 fw-bold">Read More <i
+              <a href="#" class="btn btn-link text-secondary p-0 fw-bold mt-auto text-start">Read More <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div>
@@ -205,15 +207,15 @@
           <div class="card h-100 border-0 shadow-sm glass-card overflow-hidden">
             <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop"
               class="card-img-top" alt="Blog 2">
-            <div class="card-body p-4">
+            <div class="card-body p-4 d-flex flex-column h-100">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <span class="badge bg-info text-dark">Medical</span>
                 <small class="text-muted">May 10, 2026</small>
               </div>
-              <h5 class="card-title fw-bold">Streamlining Radiology Reports via Transcription</h5>
+              <h4 class="card-title fw-bold">Streamlining Radiology Reports via Transcription</h4>
               <p class="card-text text-muted small">How specialized transcribers handle complex imaging jargon with 99%+
                 accuracy.</p>
-              <a href="#" class="btn btn-link text-secondary p-0 fw-bold">Read More <i
+              <a href="#" class="btn btn-link text-secondary p-0 fw-bold mt-auto text-start">Read More <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div>
@@ -223,15 +225,15 @@
           <div class="card h-100 border-0 shadow-sm glass-card overflow-hidden">
             <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&auto=format&fit=crop"
               class="card-img-top" alt="Blog 3">
-            <div class="card-body p-4">
+            <div class="card-body p-4 d-flex flex-column h-100">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <span class="badge bg-dark">Security</span>
                 <small class="text-muted">May 05, 2026</small>
               </div>
-              <h5 class="card-title fw-bold">Cybersecurity for Freelance Legal Professionals</h5>
+              <h4 class="card-title fw-bold">Cybersecurity for Freelance Legal Professionals</h4>
               <p class="card-text text-muted small">Practical tips to keep your client's data safe from modern phishing
                 and ransomware attacks.</p>
-              <a href="#" class="btn btn-link text-secondary p-0 fw-bold">Read More <i
+              <a href="#" class="btn btn-link text-secondary p-0 fw-bold mt-auto text-start">Read More <i
                   class="bi bi-arrow-right"></i></a>
             </div>
           </div>
@@ -260,13 +262,13 @@
             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop"
               class="img-fluid rounded-circle border border-5 border-secondary shadow-lg mb-3"
               style="width: 250px; height: 250px; object-fit: cover;" alt="Dr. Sarah Chen">
-            <h4 class="fw-bold mb-0 text-white">Dr. Sarah Chen</h4>
-            <p class="opacity-75 text-white">Medical Transcription Lead</p>
+            <h3 class="fw-bold mb-0 text-white">Dr. Sarah Chen</h3>
+            <p class="fs-5 text-white opacity-75">Medical Transcription Lead</p>
           </div>
           <div class="col-lg-8">
-            <h3 class="display-6 fw-bold mb-4 text-white">"The integrity of a medical record depends entirely on the
+            <h2 class="display-5 fw-bold mb-4 text-white">"The integrity of a medical record depends entirely on the
               precision of
-              the transcription."</h3>
+              the transcription."</h2>
             <p class="lead mb-4 text-white">Dr. Sarah Chen joins us this month to discuss the critical intersection of
               clinical
               workflow and document accuracy. With over 15 years in healthcare administration, her insights guide our
@@ -292,7 +294,7 @@
 
         <div class="position-relative z-index-1">
           <i class="bi bi-envelope-heart-fill display-4 text-secondary mb-4 d-inline-block"></i>
-          <h2 class="display-5 fw-bold mb-3">Stay Ahead of the Curve</h2>
+          <h2 class="display-4 fw-bold mb-3">Stay Ahead of the Curve</h2>
           <p class="lead text-muted mb-5 max-w-700 mx-auto">Join 5,000+ legal and medical professionals receiving our
             bi-weekly breakdown of transcription tech and compliance updates.</p>
           <form class="mx-auto" style="max-width: 500px;" onsubmit="event.preventDefault(); alert('Subscribed!');">
@@ -313,8 +315,8 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4">
-          <h5 class="mb-3 d-flex align-items-center gap-2">
-            <i class="bi bi-headphones text-secondary"></i> MedLex
+          <h5 class="mb-3 d-flex align-items-center gap-2 footer-brand">
+            <i class="bi bi-headphones text-secondary fs-3"></i> MedLex
           </h5>
           <p class="mb-4 opacity-75">Providing secure, accurate, and rapid transcription services for the
             legal and medical industries globally.</p>
