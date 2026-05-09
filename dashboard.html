@@ -133,13 +133,43 @@
     }
 
     @media (max-width: 1024px) {
+      html.sidebar-open-lock,
+      body.sidebar-open-lock {
+        overflow: hidden;
+        height: 100dvh;
+      }
+
       .sidebar {
         left: calc(-1 * var(--sidebar-width));
         box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+        height: 100dvh;
       }
 
       .sidebar.show {
         left: 0;
+      }
+
+      .sidebar-brand {
+        padding: 1.25rem 1rem;
+      }
+
+      .sidebar-nav {
+        padding: 0 0.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-link-custom {
+        padding: 0.65rem 0.9rem;
+        margin-bottom: 2px;
+      }
+
+      .sidebar-footer {
+        padding: 0.65rem 0.75rem;
+      }
+
+      .sidebar-nav .mobile-compliance-label {
+        margin-top: 0.75rem !important;
+        padding-top: 0.5rem !important;
       }
 
       .main-content {
@@ -227,6 +257,22 @@
       border-color: rgba(0, 0, 0, 0.15) !important;
     }
 
+    /* Keep header RTL/Theme icon buttons visible in default/light mode */
+    html:not([data-theme="dark"]) .dashboard-header #theme-toggle,
+    html:not([data-theme="dark"]) .dashboard-header #rtl-toggle {
+      display: inline-flex !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      color: #0f172a !important;
+      border-color: rgba(15, 23, 42, 0.25) !important;
+      background-color: #f8fafc !important;
+    }
+
+    html:not([data-theme="dark"]) .dashboard-header #theme-toggle i,
+    html:not([data-theme="dark"]) .dashboard-header #rtl-toggle i {
+      color: #0f172a !important;
+    }
+
     .btn-outline-secondary:hover {
       background-color: var(--secondary);
       border-color: var(--secondary);
@@ -244,8 +290,7 @@
           <i class="bi bi-headphones text-secondary fs-3"></i>
           <span>MedLex</span>
         </a>
-        <button class="btn btn-link text-white d-lg-none p-0"
-          onclick="document.getElementById('dashboardSidebar').classList.remove('show')">
+        <button class="btn btn-link text-white d-lg-none p-0" onclick="closeDashboardSidebar()">
           <i class="bi bi-x-lg fs-4"></i>
         </button>
       </div>
@@ -267,7 +312,7 @@
         <a href="#settings-module" class="nav-link-custom">
           <i class="bi bi-person-gear"></i> Account Settings
         </a>
-        <div class="mt-5 pt-5 opacity-50 px-3">
+        <div class="mt-3 pt-2 opacity-50 px-3 mobile-compliance-label">
           <small class="text-uppercase fw-bold" style="font-size: 0.7rem;">Compliance</small>
         </div>
         <a href="#security-module" class="nav-link-custom">
@@ -279,14 +324,6 @@
       </nav>
 
       <div class="sidebar-footer">
-        <button id="theme-toggle"
-          class="nav-link-custom w-100 border-0 bg-transparent text-white-50 justify-content-start">
-          <i class="bi bi-moon" id="theme-icon"></i> <span>Dark Mode</span>
-        </button>
-        <button id="rtl-toggle"
-          class="nav-link-custom w-100 border-0 bg-transparent text-white-50 justify-content-start">
-          <i class="bi bi-arrow-left-right"></i> <span>RTL Mode</span>
-        </button>
         <a href="login.html" class="nav-link-custom text-danger">
           <i class="bi bi-box-arrow-left"></i> Logout
         </a>
@@ -299,14 +336,21 @@
       <header class="dashboard-header">
         <div class="container d-flex align-items-center justify-content-between">
           <div class="d-flex align-items-center gap-3">
-            <button class="btn btn-link d-lg-none p-0" type="button"
-              onclick="document.getElementById('dashboardSidebar').classList.toggle('show')">
+            <button class="btn btn-link d-lg-none p-0" type="button" onclick="toggleDashboardSidebar()">
               <i class="bi bi-list fs-2"></i>
             </button>
             <h5 class="mb-0 fw-bold small">Welcome back, Sarah</h5>
           </div>
 
-          <div class="d-flex align-items-center gap-4">
+          <div class="d-flex align-items-center gap-3">
+            <button id="theme-toggle" class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-2"
+              aria-label="Toggle Theme" title="Toggle Theme">
+              <i class="bi bi-moon" id="theme-icon"></i> <span class="d-none">Dark Mode</span>
+            </button>
+            <button id="rtl-toggle" class="btn btn-sm btn-outline-secondary d-flex align-items-center gap-2"
+              aria-label="Toggle RTL" title="Toggle RTL">
+              <i class="bi bi-arrow-left-right"></i> <span class="d-none">RTL Mode</span>
+            </button>
             <div class="dropdown">
               <a href="#" class="d-flex align-items-center gap-2 text-decoration-none" data-bs-toggle="dropdown">
                 <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop"
@@ -597,7 +641,7 @@
           <h2 class="display-4 fw-bold mb-4">Account Settings</h2>
           <div class="row g-4">
             <div class="col-lg-8">
-              <div class="glass-card p-4">
+              <div class="glass-card p-4 h-100">
                 <h4 class="fw-bold mb-4">Profile Information</h4>
                 <form class="row g-3">
                   <div class="col-md-6">
@@ -616,7 +660,7 @@
               </div>
             </div>
             <div class="col-lg-4">
-              <div class="glass-card p-4">
+              <div class="glass-card p-4 h-100">
                 <h4 class="fw-bold mb-3">Login Security</h4>
                 <p class="text-muted small">Update your password or enable 2FA for extra vault protection.</p>
                 <button class="btn btn-outline-secondary btn-sm w-100 mb-2">Change Password</button>
@@ -698,6 +742,32 @@
     document.addEventListener('DOMContentLoaded', function () {
       const navLinks = document.querySelectorAll('.nav-link-custom');
       const modules = document.querySelectorAll('.dashboard-module');
+      const sidebar = document.getElementById('dashboardSidebar');
+      const lockPageScroll = () => {
+        document.documentElement.classList.add('sidebar-open-lock');
+        document.body.classList.add('sidebar-open-lock');
+      };
+      const unlockPageScroll = () => {
+        document.documentElement.classList.remove('sidebar-open-lock');
+        document.body.classList.remove('sidebar-open-lock');
+      };
+
+      window.closeDashboardSidebar = function () {
+        if (sidebar) {
+          sidebar.classList.remove('show');
+        }
+        unlockPageScroll();
+      };
+
+      window.toggleDashboardSidebar = function () {
+        if (!sidebar) return;
+        sidebar.classList.toggle('show');
+        if (sidebar.classList.contains('show')) {
+          lockPageScroll();
+        } else {
+          unlockPageScroll();
+        }
+      };
 
       navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
@@ -720,9 +790,8 @@
               this.classList.add('active');
 
               // On mobile/tablet, close sidebar after choice
-              const sidebar = document.getElementById('dashboardSidebar');
               if (window.innerWidth <= 1024) {
-                sidebar.classList.remove('show');
+                closeDashboardSidebar();
               }
             }
           }

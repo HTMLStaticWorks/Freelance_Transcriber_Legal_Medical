@@ -709,6 +709,23 @@ footer a:hover {
     }
 }
 
+/* Home page Success Stories: keep author names aligned in tablet view only */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #success-stories .glass-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #success-stories .glass-card p {
+        flex-grow: 1;
+    }
+
+    #success-stories .glass-card h6 {
+        margin-top: auto !important;
+    }
+}
+
 /* Back to Top Button */
 .back-to-top {
     position: fixed;
