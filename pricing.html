@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -132,6 +132,48 @@
     .glass-card h4,
     .glass-card p {
       color: var(--text-main) !important;
+    }
+
+    /* RTL Mode Footer Alignment Correction */
+    [dir="rtl"] footer {
+      direction: rtl !important;
+      text-align: right !important;
+    }
+
+    [dir="rtl"] footer h5,
+    [dir="rtl"] footer .footer-brand,
+    [dir="rtl"] footer ul,
+    [dir="rtl"] footer li,
+    [dir="rtl"] footer a {
+      text-align: right !important;
+    }
+
+    [dir="rtl"] footer p {
+      direction: ltr !important;
+      text-align: right !important;
+    }
+
+    [dir="rtl"] footer .footer-brand {
+      justify-content: flex-start !important;
+    }
+
+    [dir="rtl"] footer .social-icons {
+      justify-content: flex-start !important;
+    }
+
+    [dir="rtl"] footer form.d-flex input.form-control {
+      margin-right: 0 !important;
+      margin-left: 0.5rem !important;
+      text-align: left !important;
+      direction: ltr !important;
+    }
+
+    [dir="rtl"] footer .row {
+      text-align: right !important;
+    }
+
+    [dir="rtl"] footer .row > div:nth-child(3) h5 {
+      margin-right: 2.2rem !important;
     }
   </style>
 </head>

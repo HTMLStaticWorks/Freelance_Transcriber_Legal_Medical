@@ -56,7 +56,7 @@
       padding: 2rem 1.5rem;
       flex-shrink: 0;
       font-size: 1.25rem;
-      font-weight: 700;
+      font-weight: 500;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -277,6 +277,52 @@
       background-color: var(--secondary);
       border-color: var(--secondary);
       color: white !important;
+    }
+
+    /* RTL Mode overrides for Dashboard Layout */
+    [dir="rtl"] .sidebar {
+      left: auto !important;
+      right: 0 !important;
+      border-right: none !important;
+      border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    [dir="rtl"] .main-content {
+      margin-left: 0 !important;
+      margin-right: var(--sidebar-width) !important;
+    }
+
+    [dir="rtl"] .dashboard-header {
+      left: 0 !important;
+      right: var(--sidebar-width) !important;
+    }
+
+    [dir="rtl"] .nav-link-custom:hover {
+      transform: translateX(-5px) !important;
+    }
+
+    /* Responsive Mobile Overrides for RTL (max-width: 1024px) */
+    @media (max-width: 1024px) {
+      [dir="rtl"] .sidebar {
+        right: calc(-1 * var(--sidebar-width)) !important;
+        left: auto !important;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5) !important;
+      }
+
+      [dir="rtl"] .sidebar.show {
+        right: 0 !important;
+        left: auto !important;
+      }
+
+      [dir="rtl"] .main-content {
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+      }
+
+      [dir="rtl"] .dashboard-header {
+        right: 0 !important;
+        left: 0 !important;
+      }
     }
   </style>
 </head>

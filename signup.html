@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -52,6 +52,49 @@
         .glass-card .form-label,
         .glass-card .form-check-label {
             color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        /* RTL Mode Alignment Corrections */
+        [dir="rtl"] .auth-container .glass-card {
+            direction: ltr !important;
+            text-align: left !important;
+        }
+
+        [dir="rtl"] .auth-container .input-group > .border-end-0 {
+            border-right: 1px solid rgba(255, 255, 255, 0.25) !important;
+            border-left: 0 !important;
+        }
+
+        [dir="rtl"] .auth-container .input-group > .border-start-0 {
+            border-left: 1px solid rgba(255, 255, 255, 0.25) !important;
+            border-right: 0 !important;
+        }
+
+        [dir="rtl"] .auth-container .input-group > .form-control {
+            border-left: 0 !important;
+            border-right: 0 !important;
+        }
+
+        [dir="rtl"] .auth-container .input-group > .form-control:first-child {
+            border-left: 1px solid rgba(255, 255, 255, 0.25) !important;
+            border-right: 0 !important;
+        }
+
+        [dir="rtl"] .auth-container .input-group > .form-control:last-child {
+            border-right: 1px solid rgba(255, 255, 255, 0.25) !important;
+            border-left: 0 !important;
+        }
+
+        [dir="rtl"] .auth-container h2,
+        [dir="rtl"] .auth-container p,
+        [dir="rtl"] .auth-container .form-label,
+        [dir="rtl"] .auth-container .form-check,
+        [dir="rtl"] .auth-container .form-check-label,
+        [dir="rtl"] .auth-container a,
+        [dir="rtl"] .auth-container span,
+        [dir="rtl"] .auth-container small {
+            direction: ltr !important;
+            unicode-bidi: plaintext !important;
         }
     </style>
 </head>
