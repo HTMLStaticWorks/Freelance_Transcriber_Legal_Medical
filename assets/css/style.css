@@ -598,6 +598,18 @@ footer a:hover {
     box-shadow: 0 0 0 1px var(--secondary), var(--shadow-lg);
 }
 
+/* Light mode text visibility fix for the featured workflow card */
+html:not([data-theme="dark"]) .workflow-card.wf-featured h3 {
+    color: #FFFFFF !important;
+}
+html:not([data-theme="dark"]) .workflow-card.wf-featured p.text-muted {
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+html:not([data-theme="dark"]) .workflow-card.wf-featured .workflow-step-badge {
+    color: #FFFFFF !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
 /* Step number badge (top-right corner) */
 .workflow-step-badge {
     position: absolute;

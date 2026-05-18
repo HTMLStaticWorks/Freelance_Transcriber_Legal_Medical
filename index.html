@@ -92,7 +92,21 @@
     <nav class="navbar navbar-expand-lg navbar-dark navbar-glass fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <i class="bi bi-headphones text-secondary fs-3"></i>
+                <svg class="text-secondary flex-shrink-0 me-2" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align: middle;">
+                    <!-- Shield Base: Legal, Security, Trust -->
+                    <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3z" fill="url(#shieldGrad)" stroke="var(--secondary)" stroke-width="2" stroke-linejoin="round"/>
+                    <!-- Medical Cross: Medical Transcription Identity -->
+                    <path d="M12 7v6M9.5 10.5h5" stroke="var(--secondary)" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- Waveform Lines: Sound/Audio Transcription and Records -->
+                    <path d="M7.5 15.5h9M8.5 18.5h7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+                    <!-- Dynamic Glowing Gradient -->
+                    <defs>
+                        <linearGradient id="shieldGrad" x1="12" y1="2" x2="12" y2="23" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="rgba(6, 182, 212, 0.2)"/>
+                            <stop offset="1" stop-color="rgba(15, 23, 42, 0.7)"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
                 MedLex
             </a>
 
@@ -140,7 +154,17 @@
         aria-labelledby="mobileMenuLabel">
         <div class="offcanvas-header border-bottom border-light border-opacity-10">
             <h5 class="offcanvas-title text-white" id="mobileMenuLabel">
-                <i class="bi bi-headphones text-secondary"></i> Menu
+                <svg class="text-secondary flex-shrink-0 me-2" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align: middle;">
+                    <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3z" fill="url(#shieldGrad)" stroke="var(--secondary)" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M12 7v6M9.5 10.5h5" stroke="var(--secondary)" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M7.5 15.5h9M8.5 18.5h7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+                    <defs>
+                        <linearGradient id="shieldGrad" x1="12" y1="2" x2="12" y2="23" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="rgba(6, 182, 212, 0.2)"/>
+                            <stop offset="1" stop-color="rgba(15, 23, 42, 0.7)"/>
+                        </linearGradient>
+                    </defs>
+                </svg> Menu
             </h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                 aria-label="Close"></button>
@@ -417,7 +441,17 @@
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h5 class="mb-3 d-flex align-items-center gap-2 footer-brand">
-                        <i class="bi bi-headphones text-secondary fs-3"></i> MedLex
+                        <svg class="text-secondary flex-shrink-0" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="vertical-align: middle;">
+                            <path d="M12 2L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3z" fill="url(#shieldGrad)" stroke="var(--secondary)" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M12 7v6M9.5 10.5h5" stroke="var(--secondary)" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M7.5 15.5h9M8.5 18.5h7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+                            <defs>
+                                <linearGradient id="shieldGrad" x1="12" y1="2" x2="12" y2="23" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="rgba(6, 182, 212, 0.2)"/>
+                                    <stop offset="1" stop-color="rgba(15, 23, 42, 0.7)"/>
+                                </linearGradient>
+                            </defs>
+                        </svg> MedLex
                     </h5>
                     <p class="mb-4 opacity-75">Providing secure, accurate, and rapid transcription services for the
                         legal and medical industries globally.</p>
